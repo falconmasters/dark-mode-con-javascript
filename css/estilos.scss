@@ -1,0 +1,129 @@
+$negro: #111111;
+$blanco: #FEFEFE;
+$grisOscuro: #222222;
+$grisClaro: #C8C8C8;
+$grisClaroHover: #ACABAB;
+$azul: #3E60E9;
+$azulHover: #254BE6;
+
+$sombraDark: 10px 10px 20px rgba(170,170,170,.16);
+$sombraLight: 10px 10px 20px rgba(0,0,0,.16);
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: #F1F1F1;
+	font-family: 'Roboto', sans-serif;
+	transition: .3s ease all;
+}
+
+a {
+	color: $grisOscuro;
+	text-decoration: none;
+	font-weight: 500;
+}
+
+.contenedor {
+	max-width: 1000px;
+	width: 90%;
+	margin: auto;
+	padding: 50px 0;
+}
+
+// ----- ----- ----- ----- ----- HEADER ----- ----- ----- ----- ----- 
+nav {
+	background: $blanco;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 15px 20px;
+	border-radius: 5px;
+	transition: .3s ease all;
+	box-shadow: $sombraDark;
+
+	.logotipo {
+		font-weight: 700;
+		font-family: 'Roboto', sans-serif;
+	}
+
+	.enlaces {
+		display: flex;
+		align-items: center;
+		a {
+			margin-right: 40px;
+			&:hover {
+				color: #707070;
+			}
+		}
+	}
+}
+
+// ----- ----- ----- ----- ----- Switch ----- ----- ----- ----- ----- 
+
+
+// ----- ----- ----- ----- ----- GRID ----- ----- ----- ----- ----- 
+
+.grid {
+	display: grid;
+	grid-gap: 40px 20px;
+	grid-template-columns: 1fr 1fr 1fr;
+	padding: 40px 0;
+	.card {
+		background: $blanco;
+		padding: 20px;
+		border-radius: 5px;
+		box-shadow: $sombraDark;
+		display: flex;
+		align-items: flex-end;
+		position: relative;
+		min-height: 195px;
+		margin-top: 50px;
+		transition: .3s ease all;
+	
+		img {
+			vertical-align: top;
+			border-radius: 7px;
+			position: absolute;
+			top: -50px;
+			width: calc(100% - 40px);
+			max-height: 165px;
+			object-fit: cover;
+		}
+	
+		.botones {
+			width: 100%;
+			margin-top: 20px;
+			display: grid;
+			grid-gap: 20px;
+			grid-template-columns: 1fr 1fr;
+	
+			.boton {
+				padding: 10px;
+				color: #fff;
+				width: 100%;
+				display: block;
+				background: $negro;
+				text-align: center;
+				border-radius: 5px;
+				transition: .3s ease all;
+				&.primario {
+					background: $azul;
+					&:hover {
+						background: $azulHover;
+					}
+				}
+				
+				&.secundario {
+					background: $grisClaro;
+					&:hover {
+						background: $grisClaroHover;
+					}
+				}
+			}
+		}
+	}
+}
